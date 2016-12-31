@@ -1,0 +1,465 @@
+* {
+	margin:0;padding:0;
+	font-family: 'Montserrat', sans-serif;
+	line-height: 1.4em;
+}
+
+strong {
+	font-weight: 600;
+}
+
+
+h1,
+h2,
+h3,
+h4 {
+	font-size: 18px;
+	margin: 0;
+}
+
+.navigation {
+	display: block;
+	position: fixed;
+	z-index: 10;
+	width: 100%;
+	background: #333333;
+	height: 50px;
+	top: 0;
+	left: 0;
+	margin: 0 auto;
+}
+
+.navigation .link {
+	display: inline-block;
+	padding: 15px 20px 10px 20px;
+}
+
+.navigation .link:first-child {
+	padding-left: 0;
+}
+
+.navigation .link a {
+	color: #ffffff;
+}
+
+/*.header {
+	padding-top: 100px;
+	color: #000000;
+	background: linear-gradient(135deg, #8fc1f5 0, #1c71ad 80%);
+}
+*/
+.intro {
+	padding-top: 100px;
+	height: 100vh;
+	color: #000000;
+	background: url('../img/bg3.jpg') no-repeat top center;
+	background-size: cover;
+}
+
+.about,
+.experience,
+.education,
+.certifications {
+	padding-top: 75px;
+}
+
+.certifications {
+	padding-bottom: 150px;
+	margin-bottom: 50px;
+}
+
+.article {
+	margin-top: 30px;
+}
+
+.article .date {
+	font-size: 18px;
+}
+
+.face-photo {
+	display: block;
+	width: 100%;
+	height: auto;
+/*	border-radius: 50%;
+*/	margin-left: auto;
+	margin-right: auto;
+	margin-top: 10px;
+	max-width: 125px;
+	margin-bottom: 20px;
+	border-radius: 5px;
+	border: 2px solid #ffffff;
+}
+
+.contact-info {
+	display: block;
+	opacity: 0;
+	z-index: 99;
+	position: relative;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	padding: 25px;
+	background: #e1eaef;
+	border-radius: 5px;
+	font-weight: 600;
+
+	transition: all 0.5s;
+}
+
+.contact-info .title {
+	font-size: 20px;
+}
+
+.contact-info p {
+	margin: 5px 0;
+}
+
+.contact-info.active {
+	opacity: 1;
+}
+
+.skill-list {
+	padding-left: 20px;
+}
+
+.secondary-skill {
+	display: inline;
+}
+
+.secondary-skill:after {
+	content: ", ";
+}
+
+.secondary-skill:last-child:after {
+	content: "";
+}
+
+.primary-color {
+	color: #333333;
+}
+
+.secondary-color { 
+	color: #696969;
+}
+
+.highlight-color,
+.job-title,
+ .description-side .subtitle strong {
+	color: #337ab7;
+}
+
+.description-side p {
+	padding-top: 10px;
+}
+
+.title {
+	position: relative;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 30px;
+	font-weight: 600;
+}
+
+.intro-title-container {
+	margin-top: 20vh;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.title.h1 {
+	color: #000000;
+	font-size: 50px;
+}
+
+.text {
+	font-family: 'Montserrat', sans-serif;
+}
+
+.subtitle {
+	padding-top: 10px;
+}
+
+.list_section {
+	list-style-type: none;
+}
+
+.list_section-title {
+	color: #337ab7;
+	margin-top: 0;
+	margin-bottom: 20px;
+}
+
+.list-title {
+	font-weight: 400;
+	margin-top: 0;
+}
+
+.intro-button,
+.randomize-button,
+.personalize-button {
+	display: inline-block;
+	color: #ffffff;
+	font-size: 16px;
+	background: #337aff;
+	border: none;
+	border-radius: 5px;
+	margin-top: 50px;
+	margin-right: 10px;
+	padding: 10px 15px;
+	text-decoration: none;
+
+    transition: all 0.2s;
+}
+
+.randomize-button,
+.personalize-button {
+	padding: 11px 15px;
+}
+
+.randomize-button {
+	background: #e60000;
+}
+
+.personalize-button {
+	background: #45b91f;
+}
+
+.intro-button:link,
+.intro-button:visited,
+.intro-button:hover,
+.intro-button:active {
+	color: #ffffff;
+	text-decoration: none;
+}
+
+.intro-button:hover {
+	background: #0059ff;
+}
+
+.job {
+	margin-bottom: 30px;
+}
+
+.job-title {
+	padding-top: 10px;
+}
+
+.company-name {
+	display: block;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+
+.job-container {
+	border-bottom: 1px solid #cbcbcb;
+}
+
+.toggler {
+	cursor: pointer;
+}
+
+.no-padding {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.arrow {
+	position: relative;
+	top: 0;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	width: 22px;
+	transform: rotate(0deg);
+	transition: all 0.2s;
+}
+
+.toggle-arrow.active .arrow {
+	transform: rotate(180deg);
+}
+
+.more-info {
+	max-height: 0;
+	overflow: hidden;
+	padding-left: 18px;
+	margin-bottom: 10px;
+
+    transition: all 0.4s;
+
+
+}
+
+.more-info.active {
+	max-height: 300px;
+}
+
+.hidden-sm {
+	display: none;
+}
+
+.social-links {
+	border-top: 1px solid #adaeaf;
+	margin-top: 10px;
+}
+
+.icon {
+	font-size: 12px;
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	padding-left: 40px;
+	margin-top: 10px;
+	margin-right: 75px;
+	background-size: 30px 30px;
+	background-repeat: no-repeat;
+}
+
+.icon.fb-icon {
+	background-image: url('../img/fb-ico.png');
+}
+
+.icon.li-icon {
+	background-image: url('../img/li-ico.png');
+}
+
+.list-list li {
+	padding-bottom: 5px;
+}
+
+.certifications .description {
+	padding-bottom: 10px;
+}
+
+.footer {
+	background: #333333;
+	color: #ffffff;
+}
+
+.footer p {
+	display: block;
+	padding: 10px;
+	text-align: center;
+
+}
+
+@media (min-width: 768px) {
+
+	.nav > li > a {
+	    padding: 15px 20px 10px 0;
+	}
+
+}
+
+@media (min-width: 992px) {
+	.hidden-sm {
+		display: inline;
+	}
+
+	.job-title {
+		padding-top: 0px;
+	}
+
+	.header {
+		padding-bottom: 75px;
+	}
+}
+
+@media (min-width: 1200px) {
+	.contact-info {
+		position: fixed;
+		top: 100px;
+		right: 30px;
+	}
+
+}
+
+@media (min-width: 1600px) {
+	.col-xl-offset-0 {
+    	margin-left: 0%;
+	}
+
+	.col-xl-2 {
+    	width: 16.66666667%;
+	}
+
+	.contact-info {
+		right: 100px;
+	}
+}
+
+.navbar {
+    background: #333333;
+}
+
+.subMenu .nav-link {
+	display: inline-block;
+	padding: 20px 12px 12px;
+	color: #cfcfcf;
+	text-decoration: none;
+
+    transition: all 0.2s;
+}
+
+.subMenu .nav-link:hover {
+	color: #ffffff;
+}
+
+/*
+.subMenu .nav-link:hover,
+.subMenu .nav-link:active {
+	text-decoration: none;
+}*/
+
+.subMenu .nav-link.active {
+	color: #ffffff;
+	background: #000000;
+}
+
+.nav > li {
+	display: inline-block;
+}
+
+.slide-enter-active, .slide-leave-active {
+/*	opacity: 1;
+*/	max-height: 350px;
+  	transition: all 0.3s;
+}
+
+.slide-enter, .slide-leave-active {
+	max-height: 0;
+/*  	opacity: 0;
+*/}
+
+.rotate-enter-active, .rotate-leave-active {
+	transition: all .2s;
+	transform: rotate(0deg);
+}
+
+.rotate-enter, .rotate-leave-active {
+	transform: rotate(180deg);
+}
+
+.personalize {
+/*	display: none;
+*/	position: fixed;
+	top: 100px;
+	left: 50vw;
+	transform: translateX(-50%);
+
+	background: rgba(255,255,255,0.9);
+	border-radius: 5px;
+	border: 1px solid #cacaca;
+	padding: 30px;
+	opacity: 0;
+
+	transition: all 0.3s;
+}
+
+.personalize-close-button {
+	position: absolute;
+	top: -10px;
+	right: -10px;
+	padding: 5px;
+}
+
+.personalize.active {
+	opacity: 1;
+}

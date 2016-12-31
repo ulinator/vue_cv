@@ -1,0 +1,6 @@
+var data = {
+    "name": ["Anne", "Marie", "Leia", "Morgan", "Maeve", "Diana", "Rey"],
+    "surname": ["Johnson", "Lacroix", "Kowalsky", "Shimmer", "Calrissian", "Green", "Boyarsky"],
+    "job": ["Frontend Developer", "Backend Developer", "Software Engineer", "Jedi Padawan", "PR Director", "Social Media Warrior", "Bounty Hunter"],
+    "hobby": ["Survivalist", "Cook", "Saviour of the Galaxy", "Mom", "Yankees fan", "Mother of the Swarm", "Submarine Commander"]
+};

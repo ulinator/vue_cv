@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto+Condensed&amp;subset=latin-ext" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="js/vendor/jquery.smint.js"></script>
+</head>
+
+<body>
+
+<div id="app">
+
+	<nav class="navbar navbar-fixed-top navbar-full navbar-inverse">
+		<div class="container subMenu smint">
+			<a class="nav-link" href="#intro">Intro</a>
+			<a class="nav-link" href="#about">About</a>
+			<a class="nav-link" href="#experience">Experience</a>
+			<a class="nav-link" href="#education">Education</a>
+			<a class="nav-link" href="#certifications">Certifications</a>
+		</div>
+	</nav>
+
+
+	<section id="" class="intro">
+		<div class="container">
+			<div class="intro-title-container">
+				<template id="introduction">
+					<h1 class="title h1">Hello, I'm {{ firstName }} {{ lastName}} </h1>
+              		<h2 class="subtitle text">A <strong>{{ job }}</strong> and a {{ hobby }}</h2>
+				</template>
+
+				<a class=" intro-button intLink" href="#start">Find out more</a>
+				<button class="randomize-button" v-on:click="randomizePerson">
+				 Randomize!</button>
+				<button class="personalize-button" v-on:click="isActive8 = !isActive8">
+				 Personalize!</button>
+			</div>
+		</div>
+	</section>
+
+	<section v-bind:class="{ active: isActive8 }" class="personalize">
+		<template id="personalize">
+			<button v-on:click="isActive8 = !isActive8" class="personalize-close-button">X</button>
+			<p>First Name:</p>
+			<input v-model="firstName" placeholder="Your name"></input>
+			<p>Last Name:</p>
+			<input v-model="lastName" placeholder="Your last name"></input>
+			<p>Job:</p>
+			<input v-model="job" placeholder="Your job"></input>
+			<p>Hobby:</p>
+			<input v-model="hobby" placeholder="Your hobby"></input>
+		</template>
+	</section>
+
+	<section id="start" class="about start">
+		<div class="container ">
+			<div class="row">
+
+				<div class="info-side col-sm-2 col-md-3 col-lg-2 face-photo-container ">
+					<img class="face-photo" src="img/pic.jpg" alt="Morgan's face" />
+				</div>
+
+				<div class="description-side col-xs-12 col-sm-10 col-md-5 col-lg-6 col-lg-offset-1">
+					<h1 class="title">{{ firstName }} {{ lastName}}</h1>
+					<h2 class="subtitle text">A <strong>{{ job }}</strong> living in Warsaw</h2>
+					<p class="text ">I love pasta, rollerskating and developing websites and apps. I love pasta, rollerskating and developing websites and apps. </p>
+					<p class="text"><strong>I'm great at: </strong></p>
+
+					<ul class="skill-list">
+					    <li class="skill" v-for="mainSkill in mainSkills"> {{ mainSkill }} </li>
+					</ul>
+
+					<p class="text "><strong>I'm also good at:</strong>
+						<ul class="secSkill-list">
+						    <li class="secondary-skill" v-for="secSkill in secondarySkills"> {{ secSkill }} </li>
+						</ul>
+					</p>
+
+				</div>
+			</div>
+			<div class="row">
+				<div class="contact-info col-xs-12 col-sm-6 col-sm-offset-2 col-md-offset-3 col-md-6 col-lg-3 ">
+				 	<h2 class="title">Contact info</h2>
+				 	<p>Phone:  <span class="pull-right"><a href="tel:+000">012 345 678</a></span></p>
+				 	<p>Mail:  <span class="pull-right"><a href="mailto:bubba@gb.pl">{{ firstName | lowercase }}@gb.pl</a> </span></p>
+				 	<p>Website:  <span class="pull-right"><a href="http://google.com" target="_blank">{{firstName}}{{lastName}}.pl</a></span></p>
+				 	<div class="social-links">
+					 	<a class="icon fb-icon extLink" href="http://google.com" target="_blank">My Facebook</a>
+					 	<a class="icon li-icon extLink" href="http://google.com" target="_blank">My LinkedIn</a>
+				 	</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<section id="" class="experience">
+		<div class="container">
+		<h2 class="title">Experience</h2>
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">May 2010 - present<br class="hidden-sm" /> (6&nbsp;years)</p>
+				</div>
+
+				<div v-on:click="isActive1 = !isActive1"  class="col-md-6 job-container toggler">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Corporate Training & Organizational Development Consultant</strong> </h3>
+						<h4 class="company-name primary-color">MedSynergies</h4>
+					</div>
+
+					<div v-bind:class="{ active: isActive1 }" class="toggle-arrow  col-xs-1 ">
+						<img class="arrow" src="img/arrow.png" />
+					</div>
+
+					<aside v-bind:class="{ active: isActive1 }" class="col-xs-12 more-info secondary-color">
+						<ul class="list-list">
+							<li>Design, develop, implement, and evaluate employee and leadership development programs that support organizational objectives and are aligned with the organization’s business plan.</li>
+							<li>Provide performance consulting and organizational development services in consultation with executive leaders and senior managers to implement improvement initiatives and assure alignment with the organization’s strategic plans.</li>
+							<li>Collaborate with stakeholders on how to achieve desired results efficiently & effectively, addressing root causes of performance gaps rather than symptoms or side effects.</li>
+							<li>Evaluate for quality, impact, scalability & sustainability to understand successes and improvement opportunities while establishing methods for both consistency & quality.</li>
+						</ul>
+					</aside>
+				</div>
+
+			</article>
+<!-- 
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">May 2010 - present<br class="hidden-sm" /> (6&nbsp;years)</p>
+				</div>
+
+				<div class="col-md-6 job-container toggler" v-on:click="info1 = !info1">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Corporate Training & Organizational Development Consultant</strong> </h3>
+						<h4 class="company-name primary-color">MedSynergies</h4>
+					</div>
+
+
+					<transition name="rotate" mode="out-in">
+						<div v-if="info1" class="reversed toggle-arrow  col-xs-1 ">
+							<img class="arrow" src="img/arrow.png" />
+						</div>
+					</transition>
+
+ 					<transition name="slide">
+						<aside v-if="info1" class="col-xs-12 more-info secondary-color">
+							<ul class="list-list">
+								<li>Design, develop, implement, and evaluate employee and leadership development programs that support organizational objectives and are aligned with the organization’s business plan.</li>
+								<li>Provide performance consulting and organizational development services in consultation with executive leaders and senior managers to implement improvement initiatives and assure alignment with the organization’s strategic plans.</li>
+								<li>Collaborate with stakeholders on how to achieve desired results efficiently & effectively, addressing root causes of performance gaps rather than symptoms or side effects.</li>
+								<li>Evaluate for quality, impact, scalability & sustainability to understand successes and improvement opportunities while establishing methods for both consistency & quality.</li>
+							</ul>
+						</aside>
+					</transition>
+				</div>
+
+			</article> -->
+
+
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">2007 - Present<br class="hidden-sm" /> (9&nbsp;years)</p>
+				</div>
+
+				<div v-on:click="isActive2 = !isActive2" class="col-md-6 job-container toggler">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Owner and Writer</strong> </h3>
+						<h4 class="company-name primary-color">WorkplacePsychology.Net</h4>
+					</div>
+
+					<div v-bind:class="{ active: isActive2 }" class="toggle-arrow col-xs-1 ">
+						<img class="arrow" src="img/arrow.png" />
+					</div>
+
+					<aside v-bind:class="{ active: isActive2 }" class="col-xs-12 more-info secondary-color">
+						<ul class="list-list">
+							<li>Industrial and Organizational (I/O) Psychology: field of psychology that studies people, work behavior (performance of tasks), and work settings to understand how behavior can be influenced, changed, & enhanced to benefit employees & organizations.</li>
+							<li>Organizational Behavior: field of study devoted to understanding, explaining, and improving the attitudes and behaviors of individuals and groups in organizations.</li>
+							<li>Change Management: the capability and set of interventions for leading and managing the people side of change to achieve a desired outcome. It's about people adopting new mindsets, policies, practices, and behaviors to deliver organizational results.</li>
+						</ul>
+					</aside>
+				</div>
+
+			</article>
+
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">2010 - 2014<br class="hidden-sm" /> (4&nbsp;years)</p>
+				</div>
+
+				<div v-on:click="isActive3 = !isActive3"  class="col-md-6 job-container toggler">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Associate Faculty</strong> </h3>
+						<h4 class="company-name primary-color">University of Phoenix</h4>
+					</div>
+
+					<div v-bind:class="{ active: isActive3 }" class="toggle-arrow col-xs-1 ">
+						<img class="arrow" src="img/arrow.png" />
+					</div>
+
+					<aside v-bind:class="{ active: isActive3 }" class="col-xs-12 more-info secondary-color">
+						<ul class="list-list">
+							<li>Engage and lead students using didactic and facilitative techniques to help them sharpen their academic skills while learning practical, relevant lessons about health and wellness.</li>
+							<li>Facilitate the learning process by analyzing, organizing, and translating the information to be learned into a format that matches the student’s current level of understanding. This allows students to build upon knowledge that they have already learned.</li>
+							<li>Equip and empower students to use critical thinking skills, teaching them to learn to “fish for themselves” without having to rely on others to “fish for them.”</li>
+						</ul>
+					</aside>
+				</div>
+
+			</article>
+
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">2007 - 2008<br class="hidden-sm" /> (1&nbsp;year)</p>
+				</div>
+
+				<div v-on:click="isActive4 = !isActive4"  class="col-md-6 job-container toggler">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Disability Services Advisor</strong> </h3>
+						<h4 class="company-name primary-color">Collin College</h4>
+					</div>
+
+					<div v-bind:class="{ active: isActive4 }" class="toggle-arrow col-xs-1 ">
+						<img class="arrow" src="img/arrow.png" />
+					</div>
+
+					<aside v-bind:class="{ active: isActive4 }" class="col-xs-12 more-info secondary-color">
+						<ul class="list-list">
+							<li>Developed and delivered quality disability services to student population at Collin College. Implemented programs and policies in the areas of advising to students and training to faculty, to improve college learning experience for students and college teaching experience for faculty.</li>
+							<li>Promoted teamwork-based environment to drive better interaction with & services to students. Personally cited by students as the dynamic force behind improved advisor-student relations.</li>
+							<li>Counseled students in getting the appropriate level of mental health care. Proctored and administered tests for students on all campuses needing special testing arrangements.</li>
+							<li>Delivered presentation on alternative education for students with disability, helping them and their families to understand their rights and options.</li>
+						</ul>
+					</aside>
+				</div>
+
+			</article>
+
+
+		</div>
+	</section>
+
+	<section id="" class="education">
+		<div class="container ">
+		<h2 class="title">Education</h2>
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">2008 - 2013</p>
+				</div>
+
+				<div v-on:click="isActive5 = !isActive5"  class="col-md-6 job-container toggler">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Ph.D., Industrial and Organizational Psychology</strong> </h3>
+						<h4 class="company-name primary-color">Capella University</h4>
+					</div>
+
+					<div v-bind:class="{ active: isActive5 }" class="toggle-arrow col-xs-1 ">
+						<img class="arrow" src="img/arrow.png" />
+					</div>
+
+					<aside v-bind:class="{ active: isActive5 }" class="col-xs-12 more-info secondary-color">
+						<ul class="list-list">
+							<li>Dissertation: Gender and Conflict-Handling Style as Predictors of Indirect Workplace Aggression</li>
+							<li>Graduated with Distinction</li>
+						</ul>
+					</aside>
+				</div>
+
+			</article>
+
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">1998 - 2003</p>
+				</div>
+
+				<div v-on:click="isActive6 = !isActive6"  class="col-md-6 job-container toggler">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Master of Arts, Counseling Psychology</strong> </h3>
+						<h4 class="company-name primary-color">Texas Woman's University</h4>
+					</div>
+
+					<div v-bind:class="{ active: isActive6 }" class="toggle-arrow col-xs-1 ">
+						<img class="arrow" src="img/arrow.png" />
+					</div>
+
+					<aside v-bind:class="{ active: isActive6 }" class="col-xs-12 more-info secondary-color">
+						<ul class="list-list">
+							<li>Kate Adele Hill Scholarship</li>
+						</ul>
+					</aside>
+				</div>
+
+			</article>
+
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">1989 - 1993</p>
+				</div>
+
+				<div v-on:click="isActive7 = !isActive7"  class="col-md-6 job-container toggler">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Bachelor of Arts, Philosophy</strong> </h3>
+						<h4 class="company-name primary-color">Baylor University</h4>
+					</div>
+
+					<div v-bind:class="{ active: isActive7 }" class="toggle-arrow col-xs-1 ">
+						<img class="arrow" src="img/arrow.png" />
+					</div>
+
+					<aside v-bind:class="{ active: isActive7 }" class="col-xs-12 more-info secondary-color">
+						<ul class="list-list">
+							<li>Caritas of Waco</li>
+							<li>Habitat for Humanity</li>
+							<li>Waco Animal Shelter</li>
+						</ul>
+					</aside>
+				</div>
+
+			</article>
+
+		</div>
+	</section>
+
+
+	<section id="" class="certifications">
+		<div class="container ">
+		<h2 class="title">Certifications</h2>
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">Sept 2016 - Present</p>
+				</div>
+
+				<div class="col-md-6 job-container">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>MBTI® Certified Practitioner</strong> </h3>
+						<h4 class="company-name primary-color">GS Consultants</h4>
+					</div>
+
+					<p class="col-xs-12 no-padding description">Trained in the use and interpretation of the Myers-Briggs Type Indicator® (MBTI®) assessment.</p>
+
+				</div>
+
+			</article>
+
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">Dec 2015 - Present</p>
+				</div>
+
+				<div class="col-md-6 job-container">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Prosci® Certified Change Management Practitioner</strong> </h3>
+						<h4 class="company-name primary-color">Prosci, Inc.</h4>
+					</div>
+
+					<p class="col-xs-12 no-padding description">Change agent who lead an organization through change by focusing on people side of change.</p>
+
+				</div>
+
+			</article>
+
+			<article class="row article">
+
+				<div class="col-md-3 ">
+					<p class="text date secondary-color">2016 - Present</p>
+				</div>
+
+				<div class="col-md-6 job-container">
+
+					<div class="no-padding col-xs-12">
+						<h3 class="job-title"><strong>Lean Six Sigma Green Belt Certification</strong> </h3>
+						<h4 class="company-name primary-color">GoLeanSixSigma.com</h4>
+					</div>
+
+					<p class="col-xs-12 no-padding description">Lean Six Sigma combines two powerful process improvement methods: Lean and Six Sigma. Lean reduces waste by streamlining a process, while Six Sigma reduces defects by solving problems.</p>
+
+				</div>
+
+			</article>
+
+
+		</div>
+	</section>
+
+	<footer class="footer">
+		<p>copyright &copy; Morgan Jackson | 2016 </p>
+	</footer>
+
+</div>
+
+<script type="text/javascript" src="https://unpkg.com/vue@2.1.7/dist/vue.js"></script>
+<script type="text/javascript" src="data/personData.json" ></script>
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>
